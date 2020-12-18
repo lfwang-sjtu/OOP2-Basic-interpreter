@@ -136,8 +136,8 @@ public:
    int getNextLineNumber(int lineNumber);
 
 private:
-    Map<int,string> complete_line;
-    Map<int,Statement *> statement;
+    Map<int, string> complete_line;
+    Map<int, Statement *> statement;
 // Fill this in with whatever types and instance variables you need
 
 };

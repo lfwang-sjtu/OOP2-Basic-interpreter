@@ -53,5 +53,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/BASIC_interpreter.dir/DependInfo.cmake"
+  "CMakeFiles/OOP2_Basic_interpreter.dir/DependInfo.cmake"
   )

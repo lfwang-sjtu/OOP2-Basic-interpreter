@@ -17,58 +17,6 @@
 					<DistClean command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="BASIC_interpreter">
-				<Option output="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/BASIC_interpreter.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
-					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
-					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
-					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
-					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 BASIC_interpreter"/>
-					<CompileFile command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="BASIC_interpreter/fast">
-				<Option output="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/BASIC_interpreter.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
-					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
-					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
-					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
-					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 BASIC_interpreter/fast"/>
-					<CompileFile command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="rebuild_cache">
 				<Option working_dir="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug"/>
 				<Option type="4"/>
@@ -79,63 +27,118 @@
 					<DistClean command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="OOP2_Basic_interpreter">
+				<Option output="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/OOP2_Basic_interpreter.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 OOP2_Basic_interpreter"/>
+					<CompileFile command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="OOP2_Basic_interpreter/fast">
+				<Option output="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/OOP2_Basic_interpreter.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/env/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 OOP2_Basic_interpreter/fast"/>
+					<CompileFile command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/env/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
 		<Unit filename="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/Basic/Basic.cpp">
-			<Option target="BASIC_interpreter"/>
+			<Option target="OOP2_Basic_interpreter"/>
 		</Unit>
 		<Unit filename="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/Basic/evalstate.cpp">
-			<Option target="BASIC_interpreter"/>
+			<Option target="OOP2_Basic_interpreter"/>
 		</Unit>
 		<Unit filename="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/Basic/evalstate.h">
-			<Option target="BASIC_interpreter"/>
+			<Option target="OOP2_Basic_interpreter"/>
 		</Unit>
 		<Unit filename="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/Basic/exp.cpp">
-			<Option target="BASIC_interpreter"/>
+			<Option target="OOP2_Basic_interpreter"/>
 		</Unit>
 		<Unit filename="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/Basic/exp.h">
-			<Option target="BASIC_interpreter"/>
+			<Option target="OOP2_Basic_interpreter"/>
 		</Unit>
 		<Unit filename="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/Basic/parser.cpp">
-			<Option target="BASIC_interpreter"/>
+			<Option target="OOP2_Basic_interpreter"/>
 		</Unit>
 		<Unit filename="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/Basic/parser.h">
-			<Option target="BASIC_interpreter"/>
+			<Option target="OOP2_Basic_interpreter"/>
 		</Unit>
 		<Unit filename="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/Basic/program.cpp">
-			<Option target="BASIC_interpreter"/>
+			<Option target="OOP2_Basic_interpreter"/>
 		</Unit>
 		<Unit filename="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/Basic/program.h">
-			<Option target="BASIC_interpreter"/>
+			<Option target="OOP2_Basic_interpreter"/>
 		</Unit>
 		<Unit filename="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/Basic/statement.cpp">
-			<Option target="BASIC_interpreter"/>
+			<Option target="OOP2_Basic_interpreter"/>
 		</Unit>
 		<Unit filename="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/Basic/statement.h">
-			<Option target="BASIC_interpreter"/>
+			<Option target="OOP2_Basic_interpreter"/>
 		</Unit>
 		<Unit filename="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/StanfordCPPLib/error.cpp">
-			<Option target="BASIC_interpreter"/>
+			<Option target="OOP2_Basic_interpreter"/>
 		</Unit>
 		<Unit filename="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/StanfordCPPLib/error.h">
-			<Option target="BASIC_interpreter"/>
+			<Option target="OOP2_Basic_interpreter"/>
+		</Unit>
+		<Unit filename="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/StanfordCPPLib/map.h">
+			<Option target="OOP2_Basic_interpreter"/>
 		</Unit>
 		<Unit filename="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/StanfordCPPLib/simpio.cpp">
-			<Option target="BASIC_interpreter"/>
+			<Option target="OOP2_Basic_interpreter"/>
 		</Unit>
 		<Unit filename="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/StanfordCPPLib/simpio.h">
-			<Option target="BASIC_interpreter"/>
+			<Option target="OOP2_Basic_interpreter"/>
 		</Unit>
 		<Unit filename="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/StanfordCPPLib/strlib.cpp">
-			<Option target="BASIC_interpreter"/>
+			<Option target="OOP2_Basic_interpreter"/>
 		</Unit>
 		<Unit filename="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/StanfordCPPLib/strlib.h">
-			<Option target="BASIC_interpreter"/>
+			<Option target="OOP2_Basic_interpreter"/>
 		</Unit>
 		<Unit filename="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/StanfordCPPLib/tokenscanner.cpp">
-			<Option target="BASIC_interpreter"/>
+			<Option target="OOP2_Basic_interpreter"/>
 		</Unit>
 		<Unit filename="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/StanfordCPPLib/tokenscanner.h">
-			<Option target="BASIC_interpreter"/>
+			<Option target="OOP2_Basic_interpreter"/>
 		</Unit>
 		<Unit filename="C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

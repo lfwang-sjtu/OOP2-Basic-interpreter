@@ -75,17 +75,6 @@ CMAKE_BINARY_DIR = C:\Users\Snoopy\CLionProjects\OOP2-Basic-interpreter\cmake-bu
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -96,6 +85,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	"C:\Program Files\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -130,17 +130,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named BASIC_interpreter
+# Target rules for targets named OOP2_Basic_interpreter
 
 # Build rule for target.
-BASIC_interpreter: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 BASIC_interpreter
-.PHONY : BASIC_interpreter
+OOP2_Basic_interpreter: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 OOP2_Basic_interpreter
+.PHONY : OOP2_Basic_interpreter
 
 # fast build rule for target.
-BASIC_interpreter/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/build
-.PHONY : BASIC_interpreter/fast
+OOP2_Basic_interpreter/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/build
+.PHONY : OOP2_Basic_interpreter/fast
 
 Basic/Basic.obj: Basic/Basic.cpp.obj
 
@@ -148,7 +148,7 @@ Basic/Basic.obj: Basic/Basic.cpp.obj
 
 # target to build an object file
 Basic/Basic.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/Basic/Basic.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/Basic/Basic.cpp.obj
 .PHONY : Basic/Basic.cpp.obj
 
 Basic/Basic.i: Basic/Basic.cpp.i
@@ -157,7 +157,7 @@ Basic/Basic.i: Basic/Basic.cpp.i
 
 # target to preprocess a source file
 Basic/Basic.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/Basic/Basic.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/Basic/Basic.cpp.i
 .PHONY : Basic/Basic.cpp.i
 
 Basic/Basic.s: Basic/Basic.cpp.s
@@ -166,7 +166,7 @@ Basic/Basic.s: Basic/Basic.cpp.s
 
 # target to generate assembly for a file
 Basic/Basic.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/Basic/Basic.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/Basic/Basic.cpp.s
 .PHONY : Basic/Basic.cpp.s
 
 Basic/evalstate.obj: Basic/evalstate.cpp.obj
@@ -175,7 +175,7 @@ Basic/evalstate.obj: Basic/evalstate.cpp.obj
 
 # target to build an object file
 Basic/evalstate.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/Basic/evalstate.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/Basic/evalstate.cpp.obj
 .PHONY : Basic/evalstate.cpp.obj
 
 Basic/evalstate.i: Basic/evalstate.cpp.i
@@ -184,7 +184,7 @@ Basic/evalstate.i: Basic/evalstate.cpp.i
 
 # target to preprocess a source file
 Basic/evalstate.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/Basic/evalstate.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/Basic/evalstate.cpp.i
 .PHONY : Basic/evalstate.cpp.i
 
 Basic/evalstate.s: Basic/evalstate.cpp.s
@@ -193,7 +193,7 @@ Basic/evalstate.s: Basic/evalstate.cpp.s
 
 # target to generate assembly for a file
 Basic/evalstate.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/Basic/evalstate.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/Basic/evalstate.cpp.s
 .PHONY : Basic/evalstate.cpp.s
 
 Basic/exp.obj: Basic/exp.cpp.obj
@@ -202,7 +202,7 @@ Basic/exp.obj: Basic/exp.cpp.obj
 
 # target to build an object file
 Basic/exp.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/Basic/exp.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/Basic/exp.cpp.obj
 .PHONY : Basic/exp.cpp.obj
 
 Basic/exp.i: Basic/exp.cpp.i
@@ -211,7 +211,7 @@ Basic/exp.i: Basic/exp.cpp.i
 
 # target to preprocess a source file
 Basic/exp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/Basic/exp.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/Basic/exp.cpp.i
 .PHONY : Basic/exp.cpp.i
 
 Basic/exp.s: Basic/exp.cpp.s
@@ -220,7 +220,7 @@ Basic/exp.s: Basic/exp.cpp.s
 
 # target to generate assembly for a file
 Basic/exp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/Basic/exp.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/Basic/exp.cpp.s
 .PHONY : Basic/exp.cpp.s
 
 Basic/parser.obj: Basic/parser.cpp.obj
@@ -229,7 +229,7 @@ Basic/parser.obj: Basic/parser.cpp.obj
 
 # target to build an object file
 Basic/parser.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/Basic/parser.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/Basic/parser.cpp.obj
 .PHONY : Basic/parser.cpp.obj
 
 Basic/parser.i: Basic/parser.cpp.i
@@ -238,7 +238,7 @@ Basic/parser.i: Basic/parser.cpp.i
 
 # target to preprocess a source file
 Basic/parser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/Basic/parser.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/Basic/parser.cpp.i
 .PHONY : Basic/parser.cpp.i
 
 Basic/parser.s: Basic/parser.cpp.s
@@ -247,7 +247,7 @@ Basic/parser.s: Basic/parser.cpp.s
 
 # target to generate assembly for a file
 Basic/parser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/Basic/parser.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/Basic/parser.cpp.s
 .PHONY : Basic/parser.cpp.s
 
 Basic/program.obj: Basic/program.cpp.obj
@@ -256,7 +256,7 @@ Basic/program.obj: Basic/program.cpp.obj
 
 # target to build an object file
 Basic/program.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/Basic/program.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/Basic/program.cpp.obj
 .PHONY : Basic/program.cpp.obj
 
 Basic/program.i: Basic/program.cpp.i
@@ -265,7 +265,7 @@ Basic/program.i: Basic/program.cpp.i
 
 # target to preprocess a source file
 Basic/program.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/Basic/program.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/Basic/program.cpp.i
 .PHONY : Basic/program.cpp.i
 
 Basic/program.s: Basic/program.cpp.s
@@ -274,7 +274,7 @@ Basic/program.s: Basic/program.cpp.s
 
 # target to generate assembly for a file
 Basic/program.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/Basic/program.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/Basic/program.cpp.s
 .PHONY : Basic/program.cpp.s
 
 Basic/statement.obj: Basic/statement.cpp.obj
@@ -283,7 +283,7 @@ Basic/statement.obj: Basic/statement.cpp.obj
 
 # target to build an object file
 Basic/statement.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/Basic/statement.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/Basic/statement.cpp.obj
 .PHONY : Basic/statement.cpp.obj
 
 Basic/statement.i: Basic/statement.cpp.i
@@ -292,7 +292,7 @@ Basic/statement.i: Basic/statement.cpp.i
 
 # target to preprocess a source file
 Basic/statement.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/Basic/statement.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/Basic/statement.cpp.i
 .PHONY : Basic/statement.cpp.i
 
 Basic/statement.s: Basic/statement.cpp.s
@@ -301,7 +301,7 @@ Basic/statement.s: Basic/statement.cpp.s
 
 # target to generate assembly for a file
 Basic/statement.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/Basic/statement.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/Basic/statement.cpp.s
 .PHONY : Basic/statement.cpp.s
 
 StanfordCPPLib/error.obj: StanfordCPPLib/error.cpp.obj
@@ -310,7 +310,7 @@ StanfordCPPLib/error.obj: StanfordCPPLib/error.cpp.obj
 
 # target to build an object file
 StanfordCPPLib/error.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/StanfordCPPLib/error.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/StanfordCPPLib/error.cpp.obj
 .PHONY : StanfordCPPLib/error.cpp.obj
 
 StanfordCPPLib/error.i: StanfordCPPLib/error.cpp.i
@@ -319,7 +319,7 @@ StanfordCPPLib/error.i: StanfordCPPLib/error.cpp.i
 
 # target to preprocess a source file
 StanfordCPPLib/error.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/StanfordCPPLib/error.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/StanfordCPPLib/error.cpp.i
 .PHONY : StanfordCPPLib/error.cpp.i
 
 StanfordCPPLib/error.s: StanfordCPPLib/error.cpp.s
@@ -328,7 +328,7 @@ StanfordCPPLib/error.s: StanfordCPPLib/error.cpp.s
 
 # target to generate assembly for a file
 StanfordCPPLib/error.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/StanfordCPPLib/error.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/StanfordCPPLib/error.cpp.s
 .PHONY : StanfordCPPLib/error.cpp.s
 
 StanfordCPPLib/simpio.obj: StanfordCPPLib/simpio.cpp.obj
@@ -337,7 +337,7 @@ StanfordCPPLib/simpio.obj: StanfordCPPLib/simpio.cpp.obj
 
 # target to build an object file
 StanfordCPPLib/simpio.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/StanfordCPPLib/simpio.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/StanfordCPPLib/simpio.cpp.obj
 .PHONY : StanfordCPPLib/simpio.cpp.obj
 
 StanfordCPPLib/simpio.i: StanfordCPPLib/simpio.cpp.i
@@ -346,7 +346,7 @@ StanfordCPPLib/simpio.i: StanfordCPPLib/simpio.cpp.i
 
 # target to preprocess a source file
 StanfordCPPLib/simpio.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/StanfordCPPLib/simpio.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/StanfordCPPLib/simpio.cpp.i
 .PHONY : StanfordCPPLib/simpio.cpp.i
 
 StanfordCPPLib/simpio.s: StanfordCPPLib/simpio.cpp.s
@@ -355,7 +355,7 @@ StanfordCPPLib/simpio.s: StanfordCPPLib/simpio.cpp.s
 
 # target to generate assembly for a file
 StanfordCPPLib/simpio.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/StanfordCPPLib/simpio.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/StanfordCPPLib/simpio.cpp.s
 .PHONY : StanfordCPPLib/simpio.cpp.s
 
 StanfordCPPLib/strlib.obj: StanfordCPPLib/strlib.cpp.obj
@@ -364,7 +364,7 @@ StanfordCPPLib/strlib.obj: StanfordCPPLib/strlib.cpp.obj
 
 # target to build an object file
 StanfordCPPLib/strlib.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/StanfordCPPLib/strlib.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/StanfordCPPLib/strlib.cpp.obj
 .PHONY : StanfordCPPLib/strlib.cpp.obj
 
 StanfordCPPLib/strlib.i: StanfordCPPLib/strlib.cpp.i
@@ -373,7 +373,7 @@ StanfordCPPLib/strlib.i: StanfordCPPLib/strlib.cpp.i
 
 # target to preprocess a source file
 StanfordCPPLib/strlib.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/StanfordCPPLib/strlib.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/StanfordCPPLib/strlib.cpp.i
 .PHONY : StanfordCPPLib/strlib.cpp.i
 
 StanfordCPPLib/strlib.s: StanfordCPPLib/strlib.cpp.s
@@ -382,7 +382,7 @@ StanfordCPPLib/strlib.s: StanfordCPPLib/strlib.cpp.s
 
 # target to generate assembly for a file
 StanfordCPPLib/strlib.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/StanfordCPPLib/strlib.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/StanfordCPPLib/strlib.cpp.s
 .PHONY : StanfordCPPLib/strlib.cpp.s
 
 StanfordCPPLib/tokenscanner.obj: StanfordCPPLib/tokenscanner.cpp.obj
@@ -391,7 +391,7 @@ StanfordCPPLib/tokenscanner.obj: StanfordCPPLib/tokenscanner.cpp.obj
 
 # target to build an object file
 StanfordCPPLib/tokenscanner.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/StanfordCPPLib/tokenscanner.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/StanfordCPPLib/tokenscanner.cpp.obj
 .PHONY : StanfordCPPLib/tokenscanner.cpp.obj
 
 StanfordCPPLib/tokenscanner.i: StanfordCPPLib/tokenscanner.cpp.i
@@ -400,7 +400,7 @@ StanfordCPPLib/tokenscanner.i: StanfordCPPLib/tokenscanner.cpp.i
 
 # target to preprocess a source file
 StanfordCPPLib/tokenscanner.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/StanfordCPPLib/tokenscanner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/StanfordCPPLib/tokenscanner.cpp.i
 .PHONY : StanfordCPPLib/tokenscanner.cpp.i
 
 StanfordCPPLib/tokenscanner.s: StanfordCPPLib/tokenscanner.cpp.s
@@ -409,7 +409,7 @@ StanfordCPPLib/tokenscanner.s: StanfordCPPLib/tokenscanner.cpp.s
 
 # target to generate assembly for a file
 StanfordCPPLib/tokenscanner.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BASIC_interpreter.dir\build.make CMakeFiles/BASIC_interpreter.dir/StanfordCPPLib/tokenscanner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OOP2_Basic_interpreter.dir\build.make CMakeFiles/OOP2_Basic_interpreter.dir/StanfordCPPLib/tokenscanner.cpp.s
 .PHONY : StanfordCPPLib/tokenscanner.cpp.s
 
 # Help Target
@@ -420,7 +420,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... BASIC_interpreter
+	@echo ... OOP2_Basic_interpreter
 	@echo ... Basic/Basic.obj
 	@echo ... Basic/Basic.i
 	@echo ... Basic/Basic.s
