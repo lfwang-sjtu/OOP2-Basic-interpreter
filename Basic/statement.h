@@ -16,6 +16,15 @@
 #include "exp.h"
 
 /*
+ * Type: StatementType
+ * -------------------
+ * This enumerated type is used to differentiate the different
+ * expression types: REM, LET, PRINT, INPUT, END, GOTO, IF, RUN, LIST, CLEAR, QUIT, HELP.
+ */
+
+enum StatementType { REM, LET, PRINT, INPUT, END, GOTO, IF, RUN, LIST, CLEAR, QUIT, HELP };
+
+/*
  * Class: Statement
  * ----------------
  * This class is used to represent a statement in a program.
@@ -62,6 +71,8 @@ public:
 
    virtual void execute(EvalState & state) = 0;
 
+//   virtual StatementType getType() = 0;
+
 };
 
 /*
@@ -75,4 +86,96 @@ public:
  * specify its own destructor method to free that memory.
  */
 
+class RemState: public Statement{
+    RemState() = default;
+    ~RemState() = default;
+    void execute(EvalState &state){}
+};
+
+class LetState: public Statement{
+private:
+    Expression *pExp;
+    int value;
+public:
+    LetState(Expression *obj);
+    ~LetState() = default;
+    void execute(EvalState &state) override;
+};
+
+class PrintState: public Statement{
+private:
+    Expression *pExp;
+public:
+    PrintState(Expression *obj);
+    ~PrintState() = default;
+    void execute(EvalState &state) override;
+};
+
+class InputState: public Statement{
+private:
+    Expression *pExp;
+public:
+    InputState(Expression * obj);
+    ~InputState() = default;
+    void execute(EvalState &state) override;
+};
+
+class EndState: public Statement{
+public:
+    EndState() = default;
+    ~EndState() = default;
+    void execute(EvalState &state) override;
+};
+
+class GotoState: public Statement{
+private:
+    int lineNumber;
+public:
+    GotoState(int l);
+    ~GotoState() = default;
+    void execute(EvalState &state) override;
+};
+
+class IfState: public Statement{
+private:
+    Expression *pExp1, *pExp2;
+    std::string op;
+    int lineNumber;
+public:
+    IfState(Expression *p1, Expression *p2, std::string op, int l);
+    void execute(EvalState &state) override;
+};
+
+class RunState: public Statement{
+public:
+    RunState() = default;
+    ~RunState() = default;
+    void execute(EvalState &state) override;
+};
+
+class ListState: public Statement{
+public:
+    ListState() = default;
+    ~ListState() = default;
+    void execute(EvalState &state) override;
+};
+
+class ClearState: public Statement{
+public:
+    ClearState() = default;
+    ~ClearState() = default;
+    void execute(EvalState &state) override;
+};
+
+class QuitState: public Statement{
+public:
+    QuitState() = default;
+    ~QuitState() = default;
+    void execute(EvalState &state) override;
+};
+
+class HelpState: public Statement{
+public:
+    void execute(EvalState &state) override;
+};
 #endif

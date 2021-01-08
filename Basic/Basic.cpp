@@ -55,12 +55,138 @@ int main() {
  */
 
 void processLine(string line, Program & program, EvalState & state) {
-   TokenScanner scanner;
-   scanner.ignoreWhitespace();
-   scanner.scanNumbers();
-   scanner.setInput(line);
-   Expression *exp = parseExp(scanner);
-   int value = exp->eval(state);
-   cout << value << endl;
-   delete exp;
+    ///scanner
+    TokenScanner scanner;
+    scanner.scanNumbers();
+    scanner.setInput(line);
+    ///process variables
+    std::string token;
+    int lineNumber;
+
+    scanner.ignoreWhitespace();
+    if (scanner.hasMoreTokens())
+    {
+        token = scanner.nextToken();
+        if (scanner.getTokenType(token) == NUMBER)
+        {
+            lineNumber = stringToInteger(token);
+            scanner.ignoreWhitespace();
+            if (scanner.hasMoreTokens())
+            {
+                program.addSourceLine(lineNumber, line);
+                token = scanner.nextToken();
+                //todo "10 + LET + Expression", we have get rid of the the line number.
+                if (token == "REM")
+                {
+                    program.setParsedStatement(lineNumber,NULL);
+                    return;
+                }
+                if (token == "LET")
+                {
+                    LetState let(parseExp(scanner));
+                    program.setParsedStatement(lineNumber,&let);
+                    return;
+                }
+                if (token == "PRINT")
+                {
+                    PrintState print(parseExp(scanner));
+                    program.setParsedStatement(lineNumber,&print);
+                    return;
+                }
+                if (token == "INPUT")
+                {
+                    InputState input(parseExp(scanner));
+                    program.setParsedStatement(lineNumber,&input);
+                    return;
+                }
+                if (token == "END")
+                {
+                    EndState end;
+                    program.setParsedStatement(lineNumber,&end);
+                    return;
+                }
+                if (token == "GOTO")
+                {
+                    token = scanner.nextToken();
+                    int targetLine = stringToInteger(token);
+                    GotoState gotoState(targetLine);
+                    program.setParsedStatement(lineNumber,&gotoState);
+                    return;
+                }
+                if (token == "IF")
+                {
+                    Expression *lh,*rh;
+                    string op;
+                    int targetLine;
+                    try {
+                        lh = parseExp(scanner);
+                    }
+                    catch (string) {
+
+                    }
+                    IfState ifState(lh,rh,op,targetLine);
+                }
+                error("SYNTAX ERROR");
+            }
+            else
+            {
+                program.removeSourceLine(lineNumber);
+            }
+        }
+        else
+        {
+            if (scanner.getTokenType(token) == WORD)
+            {
+                if (token == "LET")
+                {
+                    scanner.ignoreWhitespace();
+                    LetState let(parseExp(scanner));
+                    let.execute(state);
+                    return;
+                }
+                if (token == "PRINT")
+                {
+                    scanner.ignoreWhitespace();
+                    cout << parseExp(scanner)->eval(state) << endl;
+                    return;
+                }
+                if (token == "INPUT")
+                {
+                    scanner.ignoreWhitespace();
+                    InputState input(parseExp(scanner));
+                    input.execute(state);
+                }
+                if (token == "RUN")
+                {
+
+                }
+                if (token == "LIST")
+                {
+                    program.listSourceCode();
+                    return;
+                }
+                if (token == "CLEAR")
+                {
+                    program.clear();
+                    ClearState clear;
+                    clear.execute(state);
+                    return;
+                }
+                if (token == "QUIT")
+                {
+                    QuitState quit;
+                    quit.execute(state);
+                    return;
+                }
+                if (token == "HELP")
+                {
+                    HelpState help;
+                    help.execute(state);
+                    return;
+                }
+                error("SYNTAX ERROR.");
+            }
+            else error("SYNTAX ERROR.");
+        }
+    }
 }

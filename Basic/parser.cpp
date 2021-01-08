@@ -48,6 +48,7 @@ Expression *readE(TokenScanner & scanner, int prec) {
       int newPrec = precedence(token);
       if (newPrec <= prec) break;
       Expression *rhs = readE(scanner, newPrec);
+      if (reinterpret_cast<ConstantExp *>(rhs)->getValue() == 0 && exp->toString() == "/") error("DIVIDED BY ZERO.");
       exp = new CompoundExp(token, exp, rhs);
    }
    scanner.saveToken(token);

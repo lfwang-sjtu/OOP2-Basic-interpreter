@@ -135,11 +135,23 @@ public:
 
    int getNextLineNumber(int lineNumber);
 
-private:
-    Map<int, string> complete_line;
-    Map<int, Statement *> statement;
-// Fill this in with whatever types and instance variables you need
+/*
+ * Method: listSourceCode
+ * Usage: program.listSourceCode
+ * -------------------------------------------------------------
+ * Lists all source lines stored in this program.
+ * //todo Notice this method is designed by myself.
+ */
 
+    void listSourceCode();
+
+private:
+    // Fill this in with whatever types and instance variables you need
+    struct Line{
+        string sourceLine;
+        Statement * parsedStatement;
+    };
+    Map<int, Line> Code;
 };
 
 #endif
