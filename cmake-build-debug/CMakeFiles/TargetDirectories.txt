@@ -1,3 +1,0 @@
-C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/CMakeFiles/OOP2_Basic_interpreter.dir
-C:/Users/Snoopy/CLionProjects/OOP2-Basic-interpreter/cmake-build-debug/CMakeFiles/edit_cache.dir

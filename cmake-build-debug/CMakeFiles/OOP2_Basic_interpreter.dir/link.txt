@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\OOP2_Basic_interpreter.dir/objects.a
-D:\env\mingw64\bin\ar.exe cr CMakeFiles\OOP2_Basic_interpreter.dir/objects.a @CMakeFiles\OOP2_Basic_interpreter.dir\objects1.rsp
-D:\env\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\OOP2_Basic_interpreter.dir/objects.a -Wl,--no-whole-archive  -o OOP2_Basic_interpreter.exe -Wl,--out-implib,libOOP2_Basic_interpreter.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\OOP2_Basic_interpreter.dir\linklibs.rsp
