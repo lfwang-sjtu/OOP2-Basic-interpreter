@@ -77,8 +77,8 @@ public:
  * Method: clearEvalState
  * Usage: state.clearEvalState()
  * -------------------------------------
- * Clears all the variables and values stored in this EvalState
- * //todo Notice this method is designed by myself.
+ * Clears all the variables and values stored in this EvalState object.
+ * todo Notice this method is designed by myself.
  */
 
    void clearEvalState();

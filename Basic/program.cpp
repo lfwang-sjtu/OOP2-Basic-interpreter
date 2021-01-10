@@ -74,22 +74,55 @@ Statement *Program::getParsedStatement(int lineNumber) {
 
 int Program::getFirstLineNumber() {
     // Replace this stub with your own code
-    auto it = Code.begin();
-    return it.operator*();
-}
-
-int Program::getNextLineNumber(int lineNumber) {
-    // Replace this stub with your own code
-    auto it = Code.begin();
-    if ((++it) != Code.end())
+    if (!Code.isEmpty())
     {
+        auto it = Code.begin();
         return it.operator*();
     }
     else return -1;
 }
 
+int Program::getNextLineNumber(int lineNumber) {
+    // Replace this stub with your own code
+    if (!Code.isEmpty())
+    {
+        for (auto it = Code.begin(); it != Code.end(); ++it)
+        {
+            if (it.operator*() == lineNumber && ((++it) != Code.end()) ) {return it.operator*();}
+        }
+    }
+    return -1;
+}
+
 void Program::listSourceCode() {
     for (auto it = Code.begin(); it != Code.end(); ++it) {
         cout << Code[it.operator*()].sourceLine << endl;
+    }
+}
+
+void Program::runProgram(EvalState &state) {
+    auto it = Code.begin();
+    while (it != Code.end())
+    {
+        try {
+            Code[it.operator*()].parsedStatement->execute(state);
+            ++it;
+        }
+        catch (EndException) {
+            return;
+        }
+        catch (GotoException gotoException) {
+            if (Code.containsKey(gotoException.getLineNumber()))
+            {
+                for (auto it1 = Code.begin(); it1 != Code.end(); ++it1) {
+                    if (it1.operator*() == gotoException.getLineNumber()){it = it1; break;}
+                }
+            }
+            else
+            {
+                cout << "LINE NUMBER ERROR.\n";
+                return;
+            }
+        }
     }
 }

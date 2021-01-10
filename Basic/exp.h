@@ -118,6 +118,8 @@ public:
 
    ConstantExp(int value);
 
+   ConstantExp(const ConstantExp &other):value(other.value){}
+
 /*
  * Prototypes for the virtual methods
  * ----------------------------------
@@ -164,6 +166,8 @@ public:
  */
 
    IdentifierExp(std::string name);
+
+   IdentifierExp(const IdentifierExp &other):name(other.name){}
 
 /*
  * Prototypes for the virtual methods
@@ -213,6 +217,8 @@ public:
  */
 
    CompoundExp(std::string op, Expression *lhs, Expression *rhs);
+
+   CompoundExp(const CompoundExp &other);
 
 /*
  * Prototypes for the virtual methods

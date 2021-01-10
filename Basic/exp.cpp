@@ -68,7 +68,7 @@ IdentifierExp::IdentifierExp(string name) {
 }
 
 int IdentifierExp::eval(EvalState & state) {
-   if (!state.isDefined(name)) error(name + " is undefined");
+   if (!state.isDefined(name)) error("VARIABLE NOT DEFINED.");
    return state.getValue(name);
 }
 
@@ -98,6 +98,16 @@ CompoundExp::CompoundExp(string op, Expression *lhs, Expression *rhs) {
    this->rhs = rhs;
 }
 
+CompoundExp::CompoundExp(const CompoundExp &other) {
+    ExpressionType typeLh = other.lhs->getType(), typeRh = other.rhs->getType();
+    if (typeLh == CONSTANT) lhs = new ConstantExp(*(reinterpret_cast<ConstantExp *>(other.lhs)));
+    if (typeLh == IDENTIFIER) lhs = new IdentifierExp(*(reinterpret_cast<IdentifierExp *>(other.lhs)));
+    if (typeLh == COMPOUND) lhs = new CompoundExp(*(reinterpret_cast<CompoundExp *>(other.lhs)));
+    if (typeRh == CONSTANT) rhs = new ConstantExp(*(reinterpret_cast<ConstantExp *>(other.rhs)));
+    if (typeRh == IDENTIFIER) rhs = new IdentifierExp(*(reinterpret_cast<IdentifierExp *>(other.rhs)));
+    if (typeRh == COMPOUND) rhs = new CompoundExp(*(reinterpret_cast<CompoundExp *>(other.rhs)));
+}
+
 CompoundExp::~CompoundExp() {
    delete lhs;
    delete rhs;
@@ -125,7 +135,11 @@ int CompoundExp::eval(EvalState & state) {
    if (op == "+") return left + right;
    if (op == "-") return left - right;
    if (op == "*") return left * right;
-   if (op == "/") return left / right;
+   if (op == "/")
+   {
+       if (right == 0) error("DIVIDED BY ZERO.");
+       else return left / right;
+   }
    error("Illegal operator in expression");
    return 0;
 }

@@ -140,10 +140,20 @@ public:
  * Usage: program.listSourceCode
  * -------------------------------------------------------------
  * Lists all source lines stored in this program.
- * //todo Notice this method is designed by myself.
+ * todo Notice this method is designed by myself.
  */
 
     void listSourceCode();
+
+/*
+ * Method: runProgram
+ * Usage: program.runProgram
+ * -------------------------------------------------------------
+ * Run all parsedStatement in this program
+ * todo Notice this method is designed by myself.
+ */
+
+    void runProgram(EvalState &state);
 
 private:
     // Fill this in with whatever types and instance variables you need

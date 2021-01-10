@@ -15,6 +15,17 @@
 #include "evalstate.h"
 #include "exp.h"
 
+class EndException{};
+
+class GotoException{
+private:
+    int lineNumber;
+public:
+    GotoException(int LN):lineNumber(LN){}
+    ~GotoException() = default;
+    int getLineNumber(){return lineNumber;}
+};
+
 /*
  * Type: StatementType
  * -------------------
@@ -87,18 +98,19 @@ public:
  */
 
 class RemState: public Statement{
+public:
     RemState() = default;
     ~RemState() = default;
-    void execute(EvalState &state){}
+    void execute(EvalState &state) override{};
 };
 
 class LetState: public Statement{
 private:
     Expression *pExp;
-    int value;
 public:
     LetState(Expression *obj);
-    ~LetState() = default;
+    LetState(const LetState &other);
+    ~LetState();
     void execute(EvalState &state) override;
 };
 
@@ -107,7 +119,7 @@ private:
     Expression *pExp;
 public:
     PrintState(Expression *obj);
-    ~PrintState() = default;
+    ~PrintState();
     void execute(EvalState &state) override;
 };
 
@@ -116,7 +128,7 @@ private:
     Expression *pExp;
 public:
     InputState(Expression * obj);
-    ~InputState() = default;
+    ~InputState();
     void execute(EvalState &state) override;
 };
 
@@ -143,39 +155,8 @@ private:
     int lineNumber;
 public:
     IfState(Expression *p1, Expression *p2, std::string op, int l);
+    ~IfState();
     void execute(EvalState &state) override;
 };
 
-class RunState: public Statement{
-public:
-    RunState() = default;
-    ~RunState() = default;
-    void execute(EvalState &state) override;
-};
-
-class ListState: public Statement{
-public:
-    ListState() = default;
-    ~ListState() = default;
-    void execute(EvalState &state) override;
-};
-
-class ClearState: public Statement{
-public:
-    ClearState() = default;
-    ~ClearState() = default;
-    void execute(EvalState &state) override;
-};
-
-class QuitState: public Statement{
-public:
-    QuitState() = default;
-    ~QuitState() = default;
-    void execute(EvalState &state) override;
-};
-
-class HelpState: public Statement{
-public:
-    void execute(EvalState &state) override;
-};
 #endif

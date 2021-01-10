@@ -9,6 +9,7 @@
 
 #include <string>
 #include "statement.h"
+#include "../StanfordCPPLib/simpio.h"
 using namespace std;
 
 /* Implementation of the Statement class */
@@ -21,6 +22,9 @@ Statement::~Statement() {
    /* Empty */
 }
 
+///REM-------------------------------------------------------------
+
+
 ///LET-------------------------------------------------------------
 LetState::LetState(Expression *obj) {
     if (obj->getType() == COMPOUND){
@@ -32,6 +36,14 @@ LetState::LetState(Expression *obj) {
     error("SYNTAX ERROR");
 }
 
+LetState::LetState(const LetState &other) {
+    if (other.pExp->getType() == CONSTANT) pExp = new ConstantExp(*(reinterpret_cast<ConstantExp *>(other.pExp)));
+    if (other.pExp->getType() == IDENTIFIER) pExp = new IdentifierExp(*(reinterpret_cast<IdentifierExp *>(other.pExp)));
+    if (other.pExp->getType() == COMPOUND) pExp = new CompoundExp(*(reinterpret_cast<CompoundExp *>(other.pExp)));
+}
+
+LetState::~LetState() noexcept { delete pExp; }
+
 void LetState::execute(EvalState &state) {
     string var = reinterpret_cast<CompoundExp *>(pExp)->getLHS()->toString();
     int value = reinterpret_cast<CompoundExp*>(pExp)->getRHS()->eval(state);
@@ -41,29 +53,48 @@ void LetState::execute(EvalState &state) {
 ///PRINT-----------------------------------------------------------
 PrintState::PrintState(Expression *obj) { pExp = obj; }
 
+PrintState::~PrintState() noexcept { delete pExp; }
+
 void PrintState::execute(EvalState &state) { cout << pExp->eval(state) << endl; }
 
 ///INPUT-----------------------------------------------------------
 InputState::InputState(Expression *obj) {
-    if (obj->getType() == IDENTIFIER){ pExp = obj; }
-    else error("InputState constructor error.");
+    if (obj->getType() == IDENTIFIER){ pExp = obj;}
+    else error("SYNTAX ERROR.");
 }
 
+InputState::~InputState() noexcept { delete pExp; }
+
 void InputState::execute(EvalState &state) {
-    int value; cin >> value;
+    std::string token;
+    int value;
+
+    while (true)
+    {
+        try {
+            token = getLine("?");
+            value = stringToInteger(token);
+        }
+        catch (...) {
+            cout << "INVALID NUMBER.\n";
+            continue;
+        }
+        break;
+    }
+
     state.setValue(pExp->toString(),value);
 }
 
 ///END-------------------------------------------------------------
 void EndState::execute(EvalState &state) {
-    error("this program is ended.");
+    throw EndException();
 }
 
 ///GOTO------------------------------------------------------------
 GotoState::GotoState(int l):lineNumber(l){}
 
 void GotoState::execute(EvalState &state) {
-    //todo
+    throw GotoException(lineNumber);
 }
 
 ///IF--------------------------------------------------------------
@@ -73,6 +104,8 @@ IfState::IfState(Expression *p1, Expression *p2, std::string op, int l)
     if (op == "=" || op == "<" || op == ">") this->op = op;
     else error("SYNTAX ERROR");
 }
+
+IfState::~IfState() throw() {delete pExp1; delete pExp2;}
 
 void IfState::execute(EvalState &state) {
     if (op == "="){
@@ -87,25 +120,4 @@ void IfState::execute(EvalState &state) {
         if (pExp1->eval(state) > pExp2->eval(state)) {GotoState(lineNumber).execute(state); return;}
         else return;
     }
-}
-
-///RUN-------------------------------------------------------------
-void RunState::execute(EvalState &state) {}
-
-///LIST------------------------------------------------------------
-void ListState::execute(EvalState &state) {}
-
-///CLEAR-----------------------------------------------------------
-void ClearState::execute(EvalState &state) {
-    state.clearEvalState();
-}
-
-///QUIT------------------------------------------------------------
-void QuitState::execute(EvalState &state) {
-    error("This project is finished.");
-}
-
-///HELP------------------------------------------------------------
-void HelpState::execute(EvalState &state) {
-    cout << "Don't ask for help.";
 }
